@@ -13,14 +13,14 @@ RUN wget --no-verbose -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/
 RUN dpkg -i /tmp/chrome.deb; apt-get -fy install
 RUN rm /tmp/chrome.deb
 
-# Install Python dependencies.
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
-
 # Copy local code to the container image.
 ENV APP_HOME /app
 WORKDIR $APP_HOME
-COPY . .
+COPY . ./
+
+# Install Python dependencies.
+RUN pip install --no-cache-dir -r requirements.txt
+
 
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.
