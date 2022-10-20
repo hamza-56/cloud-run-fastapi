@@ -19,7 +19,3 @@ __pycache__/
 # Virtual environment
 venv/
 env/
-
-# Docker files
-.dockerignore
-Dockerfile
