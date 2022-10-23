@@ -1,4 +1,4 @@
-# Cloud Run template with Flask Server + Selenium + GCP Secret Manager
+# Cloud Run template with Fast API Server
 
 
 ## Instructions
